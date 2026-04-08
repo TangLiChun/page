@@ -72,6 +72,9 @@ $featuredCount = count(array_filter($products, static fn (array $product): bool 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= h(labels()['zh']['admin_title']) ?></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= h(asset('public/admin.css')) ?>">
 </head>
 <body class="admin-page">
@@ -92,14 +95,14 @@ $featuredCount = count(array_filter($products, static fn (array $product): bool 
             <section class="sidebar-card">
                 <h2>快捷导航</h2>
                 <nav class="section-nav">
-                    <a href="#products-form"><?= $editingProduct ? '编辑商品' : '新增商品' ?></a>
-                    <a href="#products-list">商品列表</a>
-                    <a href="#faq-form"><?= $editingFaq ? '编辑 FAQ' : '新增 FAQ' ?></a>
-                    <a href="#faq-list">FAQ 列表</a>
-                    <a href="#contact-settings">联系方式</a>
-                    <a href="#hero-settings">首页 Hero</a>
-                    <a href="#seo-settings">指标与 SEO</a>
-                    <a href="#security-settings">后台安全</a>
+                    <a href="#products-form">📦 <?= $editingProduct ? '编辑商品' : '新增商品' ?></a>
+                    <a href="#products-list">📋 商品列表</a>
+                    <a href="#faq-form">❓ <?= $editingFaq ? '编辑 FAQ' : '新增 FAQ' ?></a>
+                    <a href="#faq-list">📖 FAQ 列表</a>
+                    <a href="#contact-settings">📞 联系方式</a>
+                    <a href="#hero-settings">🎯 首页 Hero</a>
+                    <a href="#seo-settings">🔍 指标与 SEO</a>
+                    <a href="#security-settings">🔒 后台安全</a>
                 </nav>
             </section>
 
@@ -147,7 +150,7 @@ $featuredCount = count(array_filter($products, static fn (array $product): bool 
             <section class="panel" id="products-form">
                 <div class="panel-head">
                     <div>
-                        <p class="panel-kicker">Product Editor</p>
+                        <p class="panel-kicker">📦 Product Editor</p>
                         <h2><?= $editingProduct ? '编辑商品' : '新增商品' ?></h2>
                     </div>
                     <p>核心字段放在同一个表单里，先填分类、价格与链接，再补中英文内容与卖点。</p>
@@ -235,7 +238,7 @@ $featuredCount = count(array_filter($products, static fn (array $product): bool 
             <section class="panel" id="products-list">
                 <div class="panel-head">
                     <div>
-                        <p class="panel-kicker">Catalog</p>
+                        <p class="panel-kicker">📋 Catalog</p>
                         <h2>商品列表</h2>
                     </div>
                     <p>按排序值与上架状态快速检查前台展示优先级。</p>
@@ -270,7 +273,7 @@ $featuredCount = count(array_filter($products, static fn (array $product): bool 
             <section class="panel" id="faq-form">
                 <div class="panel-head">
                     <div>
-                        <p class="panel-kicker">FAQ Editor</p>
+                        <p class="panel-kicker">❓ FAQ Editor</p>
                         <h2><?= $editingFaq ? '编辑 FAQ' : '新增 FAQ' ?></h2>
                     </div>
                     <p>FAQ 建议保持简短直接，优先回答价格、交付时间、售后和升级方式。</p>
@@ -308,7 +311,7 @@ $featuredCount = count(array_filter($products, static fn (array $product): bool 
             <section class="panel" id="faq-list">
                 <div class="panel-head">
                     <div>
-                        <p class="panel-kicker">FAQ Library</p>
+                        <p class="panel-kicker">📖 FAQ Library</p>
                         <h2>FAQ 列表</h2>
                     </div>
                     <p>问题按中文主标题展示，便于你快速回查和维护。</p>
@@ -337,7 +340,7 @@ $featuredCount = count(array_filter($products, static fn (array $product): bool 
             <section class="panel" id="contact-settings">
                 <div class="panel-head">
                     <div>
-                        <p class="panel-kicker">Contact Settings</p>
+                        <p class="panel-kicker">📞 Contact Settings</p>
                         <h2>联系方式</h2>
                     </div>
                     <p>这里维护前台联系人说明与所有渠道标签，中英文文案会同步跟随切换。</p>
@@ -435,7 +438,7 @@ $featuredCount = count(array_filter($products, static fn (array $product): bool 
             <section class="panel" id="hero-settings">
                 <div class="panel-head">
                     <div>
-                        <p class="panel-kicker">Hero Copy</p>
+                        <p class="panel-kicker">🎯 Hero Copy</p>
                         <h2>首页 Hero 文案</h2>
                     </div>
                     <p>首页第一屏要负责抓住客户视线，标题、副标题和按钮文案建议定期优化。</p>
@@ -477,7 +480,7 @@ $featuredCount = count(array_filter($products, static fn (array $product): bool 
             <section class="panel" id="seo-settings">
                 <div class="panel-head">
                     <div>
-                        <p class="panel-kicker">Site Meta</p>
+                        <p class="panel-kicker">🔍 Site Meta</p>
                         <h2>首页核心指标与 SEO</h2>
                     </div>
                     <p>指标数值负责建立信任感，SEO 标题与描述负责承接自然流量。</p>
@@ -527,7 +530,7 @@ $featuredCount = count(array_filter($products, static fn (array $product): bool 
             <section class="panel" id="security-settings">
                 <div class="panel-head">
                     <div>
-                        <p class="panel-kicker">Security</p>
+                        <p class="panel-kicker">🔒 Security</p>
                         <h2>修改后台密码</h2>
                     </div>
                     <p>密码会持久化保存到本地哈希文件，建议上线后第一时间更换默认密码。</p>

@@ -175,6 +175,9 @@ $heroProof = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= h($seo['title'] ?? config('site_name')) ?></title>
     <meta name="description" content="<?= h($seo['description'] ?? '') ?>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= h(asset('public/styles.css')) ?>">
 </head>
 <body>
@@ -184,10 +187,10 @@ $heroProof = [
             <span class="brand-mark"></span>
             <span><?= h(config('site_name')) ?></span>
         </a>
-        <nav class="nav-links">
-            <a href="#products"><?= h($copy['nav_products']) ?></a>
-            <a href="#faq"><?= h($copy['nav_faq']) ?></a>
-            <a href="#contact"><?= h($copy['nav_contact']) ?></a>
+        <nav class="nav-links" id="main-nav">
+            <a href="#products" data-nav><?= h($copy['nav_products']) ?></a>
+            <a href="#faq" data-nav><?= h($copy['nav_faq']) ?></a>
+            <a href="#contact" data-nav><?= h($copy['nav_contact']) ?></a>
         </nav>
         <div class="header-tools">
             <div class="lang-switch">
@@ -195,6 +198,7 @@ $heroProof = [
                 <a class="<?= $lang === 'en' ? 'active' : '' ?>" href="<?= h(switch_lang_url('en')) ?>">EN</a>
             </div>
             <a class="admin-link" href="<?= h(url('admin/login.php')) ?>">Admin</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
         </div>
     </div>
 </header>
@@ -260,9 +264,9 @@ $heroProof = [
     </section>
 
     <section class="signal-bar">
-        <div class="wrap signal-list">
+        <div class="wrap signal-list animate-stagger">
             <?php foreach (($serviceHighlights[$lang] ?? []) as $highlight): ?>
-                <div class="signal-item">
+                <div class="signal-item animate-on-scroll">
                     <strong><?= h($highlight['title']) ?></strong>
                     <span><?= h($highlight['text']) ?></span>
                 </div>
@@ -283,7 +287,7 @@ $heroProof = [
 
     <section id="products" class="section">
         <div class="wrap">
-            <div class="section-head">
+            <div class="section-head animate-on-scroll">
                 <div>
                     <p class="eyebrow"><?= h($copy['nav_products']) ?></p>
                     <h2><?= h($copy['products_title']) ?></h2>
@@ -291,7 +295,7 @@ $heroProof = [
                 <p><?= h($copy['products_intro']) ?></p>
             </div>
 
-            <div class="catalog-toolbar">
+            <div class="catalog-toolbar animate-on-scroll">
                 <div class="category-pills">
                     <a class="<?= $activeCategory === '' ? 'active' : '' ?>" href="<?= h(url('index.php')) ?>?lang=<?= h($lang) ?>#products">
                         <?= h($copy['products_all']) ?>
@@ -311,10 +315,10 @@ $heroProof = [
             <?php if ($products === []): ?>
                 <div class="empty-state"><?= h($copy['products_empty']) ?></div>
             <?php else: ?>
-                <div class="cards">
+                <div class="cards animate-stagger">
                     <?php foreach ($products as $product): ?>
                         <?php $categoryClass = strtolower(str_replace(' ', '-', (string) ($product['category'] ?? 'general'))); ?>
-                        <article class="card card-<?= h($categoryClass) ?> <?= !empty($product['featured']) ? 'card-featured' : '' ?>" id="<?= h($product['id']) ?>">
+                        <article class="card card-<?= h($categoryClass) ?> <?= !empty($product['featured']) ? 'card-featured' : '' ?> animate-on-scroll" id="<?= h($product['id']) ?>">
                             <div class="card-top">
                                 <span class="tag"><?= h($product['category']) ?></span>
                                 <?php if (!empty($product['featured'])): ?>
@@ -373,7 +377,7 @@ $heroProof = [
 
     <section class="section compare-section">
         <div class="wrap">
-            <div class="section-head">
+            <div class="section-head animate-on-scroll">
                 <div>
                     <p class="eyebrow"><?= h($lang === 'zh' ? 'Why These Plans' : 'Why These Plans') ?></p>
                     <h2><?= h($lang === 'zh' ? '先选方向，再选配置' : 'Choose the model first, then the specs') ?></h2>
@@ -381,9 +385,9 @@ $heroProof = [
                 <p><?= h($lang === 'zh' ? '很多客户不是看不懂配置，而是不知道先选 VPS、托管还是整机。这里先帮他们建立判断框架。' : 'Many buyers do not struggle with specs. They struggle with choosing between VPS, colocation, and dedicated servers first.') ?></p>
             </div>
 
-            <div class="compare-grid">
+            <div class="compare-grid animate-stagger">
                 <?php foreach ($comparisonCards as $card): ?>
-                    <article class="compare-card">
+                    <article class="compare-card animate-on-scroll">
                         <span class="tag"><?= h($card['category']) ?></span>
                         <h3><?= h($card['title'][$lang]) ?></h3>
                         <p><?= h($card['text'][$lang]) ?></p>
@@ -396,14 +400,14 @@ $heroProof = [
 
     <section id="faq" class="section faq-section">
         <div class="wrap faq-layout">
-            <div class="faq-intro">
+            <div class="faq-intro animate-on-scroll">
                 <p class="eyebrow"><?= h($copy['nav_faq']) ?></p>
                 <h2><?= h($copy['faq_title']) ?></h2>
                 <p><?= h($copy['faq_intro']) ?></p>
             </div>
-            <div class="faq-list">
+            <div class="faq-list animate-stagger">
                 <?php foreach ($faqs as $faq): ?>
-                    <details class="faq-item">
+                    <details class="faq-item animate-on-scroll">
                         <summary><?= h($faq['question'][$lang] ?? '') ?></summary>
                         <p><?= h($faq['answer'][$lang] ?? '') ?></p>
                     </details>
@@ -414,7 +418,7 @@ $heroProof = [
 
     <section class="section proof-section">
         <div class="wrap">
-            <div class="section-head">
+            <div class="section-head animate-on-scroll">
                 <div>
                     <p class="eyebrow"><?= h($lang === 'zh' ? 'Sales Proof' : 'Sales Proof') ?></p>
                     <h2><?= h($lang === 'zh' ? '页面不只要好看，还要更容易成交' : 'The page should not just look better. It should convert better.') ?></h2>
@@ -422,9 +426,9 @@ $heroProof = [
                 <p><?= h($lang === 'zh' ? '这类产品页最重要的是让客户快速理解差异、价格和下一步动作。' : 'For infrastructure offers, the page has to clarify tradeoffs, pricing, and the next action fast.') ?></p>
             </div>
 
-            <div class="proof-grid">
+            <div class="proof-grid animate-stagger">
                 <?php foreach (($proofQuotes[$lang] ?? []) as $quote): ?>
-                    <article class="proof-card">
+                    <article class="proof-card animate-on-scroll">
                         <p><?= h($quote['quote']) ?></p>
                         <strong><?= h($quote['author']) ?></strong>
                     </article>
@@ -435,36 +439,36 @@ $heroProof = [
 
     <section id="contact" class="section contact">
         <div class="wrap contact-layout">
-            <div class="contact-copy">
+            <div class="contact-copy animate-on-scroll">
                 <p class="eyebrow"><?= h($copy['nav_contact']) ?></p>
                 <h2><?= h($contact['title']) ?></h2>
                 <p><?= h($contact['intro']) ?></p>
                 <a class="button" href="mailto:<?= h($contact['email_value']) ?>"><?= h($copy['contact_cta']) ?></a>
             </div>
 
-            <div class="contact-grid">
-                <article class="contact-card">
-                    <span><?= h($contact['email_label']) ?></span>
+            <div class="contact-grid animate-stagger">
+                <article class="contact-card animate-on-scroll">
+                    <span>📧 <?= h($contact['email_label']) ?></span>
                     <strong><a href="mailto:<?= h($contact['email_value']) ?>"><?= h($contact['email_value']) ?></a></strong>
                 </article>
-                <article class="contact-card">
-                    <span><?= h($contact['phone_label']) ?></span>
+                <article class="contact-card animate-on-scroll">
+                    <span>📞 <?= h($contact['phone_label']) ?></span>
                     <strong><a href="tel:<?= h(preg_replace('/\s+/', '', $contact['phone_value'])) ?>"><?= h($contact['phone_value']) ?></a></strong>
                 </article>
                 <?php if (!empty($contact['telegram_value'])): ?>
-                    <article class="contact-card">
-                        <span><?= h($contact['telegram_label']) ?></span>
+                    <article class="contact-card animate-on-scroll">
+                        <span>✈️ <?= h($contact['telegram_label']) ?></span>
                         <strong><a href="<?= h($contact['telegram_value']) ?>" target="_blank" rel="noopener noreferrer"><?= h($contact['telegram_value']) ?></a></strong>
                     </article>
                 <?php endif; ?>
                 <?php if (!empty($contact['whatsapp_value'])): ?>
-                    <article class="contact-card">
-                        <span><?= h($contact['whatsapp_label']) ?></span>
+                    <article class="contact-card animate-on-scroll">
+                        <span>💬 <?= h($contact['whatsapp_label']) ?></span>
                         <strong><a href="<?= h($contact['whatsapp_value']) ?>" target="_blank" rel="noopener noreferrer"><?= h($contact['whatsapp_value']) ?></a></strong>
                     </article>
                 <?php endif; ?>
-                <article class="contact-card contact-card-wide">
-                    <span><?= h($contact['address_label']) ?></span>
+                <article class="contact-card contact-card-wide animate-on-scroll">
+                    <span>📍 <?= h($contact['address_label']) ?></span>
                     <strong><?= h($contact['address_value']) ?></strong>
                 </article>
             </div>
@@ -473,7 +477,7 @@ $heroProof = [
 
     <section class="section final-cta-section">
         <div class="wrap">
-            <div class="final-cta-card">
+            <div class="final-cta-card animate-on-scroll">
                 <div>
                     <p class="eyebrow"><?= h($copy['contact_cta']) ?></p>
                     <h2><?= h($finalCta[$lang]['title']) ?></h2>
@@ -491,5 +495,124 @@ $heroProof = [
         <span><?= h($copy['footer_text']) ?></span>
     </div>
 </footer>
+
+<script>
+(function() {
+    'use strict';
+
+    // ── 1. Scroll Animation (IntersectionObserver) ──
+    const animEls = document.querySelectorAll('.animate-on-scroll');
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        animEls.forEach(function(el) { observer.observe(el); });
+    } else {
+        animEls.forEach(function(el) { el.classList.add('is-visible'); });
+    }
+
+    // ── 2. Header Scroll Effect ──
+    var header = document.querySelector('.site-header');
+    var scrollThreshold = 60;
+    function updateHeader() {
+        if (window.scrollY > scrollThreshold) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+
+    // ── 3. Navigation Active Highlighting ──
+    var navLinks = document.querySelectorAll('[data-nav]');
+    var sections = [];
+    navLinks.forEach(function(link) {
+        var id = link.getAttribute('href').replace('#', '');
+        var section = document.getElementById(id);
+        if (section) sections.push({ el: section, link: link });
+    });
+
+    function highlightNav() {
+        var scrollPos = window.scrollY + 200;
+        var current = null;
+        sections.forEach(function(s) {
+            if (s.el.offsetTop <= scrollPos) current = s;
+        });
+        navLinks.forEach(function(l) { l.classList.remove('active'); });
+        if (current) current.link.classList.add('active');
+    }
+    window.addEventListener('scroll', highlightNav, { passive: true });
+    highlightNav();
+
+    // ── 4. Mobile Menu Toggle ──
+    var menuBtn = document.getElementById('menu-toggle');
+    var navMenu = document.getElementById('main-nav');
+    if (menuBtn && navMenu) {
+        menuBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('open');
+            menuBtn.textContent = navMenu.classList.contains('open') ? '✕' : '☰';
+        });
+        // Close on link click
+        navMenu.querySelectorAll('a').forEach(function(a) {
+            a.addEventListener('click', function() {
+                navMenu.classList.remove('open');
+                menuBtn.textContent = '☰';
+            });
+        });
+    }
+
+    // ── 5. Counter Animation for Metrics ──
+    var metrics = document.querySelectorAll('.metric strong');
+    var metricsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var text = el.textContent.trim();
+            // Try to extract number
+            var match = text.match(/([\d.]+)/);
+            if (match) {
+                var target = parseFloat(match[1]);
+                var suffix = text.replace(match[1], '');
+                var isFloat = text.indexOf('.') !== -1;
+                var start = 0;
+                var duration = 1200;
+                var startTime = null;
+                function animate(ts) {
+                    if (!startTime) startTime = ts;
+                    var progress = Math.min((ts - startTime) / duration, 1);
+                    var eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+                    var current = start + (target - start) * eased;
+                    el.textContent = (isFloat ? current.toFixed(1) : Math.floor(current)) + suffix;
+                    if (progress < 1) requestAnimationFrame(animate);
+                }
+                requestAnimationFrame(animate);
+            }
+            metricsObserver.unobserve(el);
+        });
+    }, { threshold: 0.5 });
+    metrics.forEach(function(m) { metricsObserver.observe(m); });
+
+    // ── 6. Smooth anchor scrolling with offset ──
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            var id = this.getAttribute('href');
+            if (id === '#top' || id === '#') return;
+            var target = document.querySelector(id);
+            if (target) {
+                e.preventDefault();
+                var offset = header.offsetHeight + 20;
+                var pos = target.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top: pos, behavior: 'smooth' });
+            }
+        });
+    });
+})();
+</script>
 </body>
 </html>
