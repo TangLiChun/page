@@ -5,26 +5,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-    --bg-primary: #0a0e1a;
-    --bg-secondary: #111827;
-    --bg-tertiary: #1e293b;
+    --bg-primary: #000000;
+    --bg-secondary: #050505;
+    --bg-tertiary: #0a0a0a;
 
-    --panel: rgba(255, 255, 255, 0.04);
-    --panel-hover: rgba(255, 255, 255, 0.07);
-    --panel-strong: rgba(255, 255, 255, 0.10);
+    --panel: #0a0a0a;
+    --panel-hover: #121212;
+    --panel-strong: #171717;
 
-    --ink: #f1f5f9;
-    --ink-secondary: #cbd5e1;
-    --muted: #94a3b8;
-    --faint: #64748b;
+    --ink: #ffffff;
+    --ink-secondary: #e5e7eb;
+    --muted: #9ca3af;
+    --faint: #6b7280;
 
     --line: rgba(255, 255, 255, 0.08);
-    --line-strong: rgba(255, 255, 255, 0.14);
+    --line-strong: rgba(255, 255, 255, 0.15);
 
-    --accent-from: #6366f1;
-    --accent-to: #06b6d4;
-    --accent: #818cf8;
-    --accent-soft: rgba(99, 102, 241, 0.12);
+    --accent-from: #ea580c;
+    --accent-to: #f97316;
+    --accent: #f97316;
+    --accent-soft: rgba(249, 115, 22, 0.12);
 
     --gold: #f59e0b;
     --gold-soft: rgba(245, 158, 11, 0.12);
@@ -33,20 +33,20 @@
     --success: #22c55e;
     --success-soft: rgba(34, 197, 94, 0.12);
 
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
-    --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.35);
-    --shadow-lg: 0 25px 60px rgba(0, 0, 0, 0.45);
-    --shadow-glow: 0 0 60px rgba(99, 102, 241, 0.1);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.6);
+    --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.7);
+    --shadow-lg: 0 25px 60px rgba(0, 0, 0, 0.8);
+    --shadow-glow: 0 0 40px rgba(249, 115, 22, 0.15);
 
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
 
     --font-sans: 'Inter', -apple-system, 'PingFang SC', 'Noto Sans SC', sans-serif;
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-    --duration-fast: 0.2s;
-    --duration-normal: 0.35s;
+    --duration-fast: 0.15s;
+    --duration-normal: 0.25s;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -66,29 +66,7 @@ body {
     overflow-x: hidden;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    background:
-        radial-gradient(ellipse 70% 50% at 15% 0%, rgba(99, 102, 241, 0.12), transparent),
-        radial-gradient(ellipse 50% 40% at 85% 5%, rgba(6, 182, 212, 0.08), transparent);
-}
 
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2), transparent 60%);
-}
 
 a { color: inherit; text-decoration: none; transition: color var(--duration-fast) ease; }
 
@@ -127,10 +105,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0.3rem 0 0;
     font-size: 1.8rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #fff, var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--ink);
 }
 
 .admin-header-copy p {
@@ -180,19 +155,19 @@ button,
     padding: 0.7rem 1.1rem;
     border-radius: var(--radius-md);
     border: 0;
-    background: linear-gradient(135deg, var(--accent-from), var(--accent-to));
-    color: #fff;
+    background: var(--accent);
+    color: var(--bg-primary);
     text-decoration: none;
     cursor: pointer;
     font-weight: 700;
     font-size: 0.9rem;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
 }
 
 button:hover,
 .admin-actions a:hover {
+    background: #ea580c;
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
+    box-shadow: 0 5px 15px rgba(249, 115, 22, 0.25);
 }
 
 .secondary-action {
@@ -228,9 +203,9 @@ textarea::placeholder {
 input:focus,
 textarea:focus {
     outline: none;
-    border-color: rgba(99, 102, 241, 0.4);
-    background: rgba(99, 102, 241, 0.06);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    border-color: rgba(249, 115, 22, 0.4);
+    background: rgba(249, 115, 22, 0.06);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
 }
 
 textarea { resize: vertical; }
@@ -266,9 +241,6 @@ label span { color: var(--ink-secondary); }
     border: 1px solid var(--line);
     border-radius: var(--radius-xl);
     background: var(--panel);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: var(--shadow-md);
 }
 
 /* ── Sidebar ── */
@@ -338,10 +310,7 @@ label span { color: var(--ink-secondary); }
     display: block;
     font-size: 1.25rem;
     margin-bottom: 0.15rem;
-    background: linear-gradient(135deg, var(--accent-from), var(--accent-to));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--ink);
 }
 
 .sidebar-stats span {
@@ -376,7 +345,7 @@ label span { color: var(--ink-secondary); }
     width: 6rem;
     height: 6rem;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.08), transparent 70%);
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.08), transparent 70%);
     pointer-events: none;
 }
 
@@ -392,10 +361,7 @@ label span { color: var(--ink-secondary); }
     display: block;
     margin: 0.3rem 0 0.5rem;
     font-size: 2rem;
-    background: linear-gradient(135deg, var(--accent-from), var(--accent-to));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--ink);
 }
 
 .stat-card p {
@@ -406,8 +372,8 @@ label span { color: var(--ink-secondary); }
 }
 
 .stat-card.accent {
-    background: linear-gradient(180deg, rgba(99, 102, 241, 0.08), var(--panel));
-    border-color: rgba(99, 102, 241, 0.15);
+    background: linear-gradient(180deg, rgba(249, 115, 22, 0.08), var(--panel));
+    border-color: rgba(249, 115, 22, 0.15);
 }
 
 /* ── Panel ── */
@@ -466,8 +432,8 @@ label span { color: var(--ink-secondary); }
 }
 
 .checkbox:hover {
-    border-color: rgba(99, 102, 241, 0.2);
-    background: rgba(99, 102, 241, 0.04);
+    border-color: rgba(249, 115, 22, 0.2);
+    background: rgba(249, 115, 22, 0.04);
 }
 
 .checkbox input { width: auto; }
@@ -486,7 +452,7 @@ label span { color: var(--ink-secondary); }
 }
 
 .item-card:hover {
-    border-color: rgba(99, 102, 241, 0.15);
+    border-color: rgba(249, 115, 22, 0.3);
     background: var(--panel-hover);
 }
 

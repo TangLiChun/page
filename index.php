@@ -167,6 +167,84 @@ $heroProof = [
         'text' => 'The first screen explains plan types, operational trust, and the next step clearly, so qualified buyers reach out faster.',
     ],
 ];
+
+$fabricData = [
+    'zh' => [
+        'title' => '为持续运转而生',
+        'subtitle' => '多核边缘路由、A+B冗余电源、叶脊网络架构，这就是我们承诺可用性的底气。',
+        'items' => [
+            [
+                'title' => '多核边缘与路由',
+                'text' => '主备边界路由器，100G/400G上行链路。真实的运营商中立混合网络，保证全球延迟最低。',
+                'points' => ['eBGP直连Tier-1 (AT&T, Cogent, HE.net)', '支持BGP黑洞与DDoS清洗', '本地优先权重与MED流量工程'],
+                'svg' => '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="parallax-item" data-speed="0.15"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>'
+            ],
+            [
+                'title' => '数据中心 Fabric 网络',
+                'text' => '高级 Leaf-spine 架构，结合 EVPN/VXLAN，实现高度可扩展的二/三层网络隔离。',
+                'points' => ['全链路 MLAG/LACP', '机柜内双路服务器独立上游', '带外网管与紧急访问支持'],
+                'svg' => '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="parallax-item" data-speed="0.2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>'
+            ],
+            [
+                'title' => '供电与连续性',
+                'text' => '从独立的 UPS (N+1 / N+N) 到每一个机柜提供真正的 A+B 供电。确保硬件永远免受限电困扰。',
+                'points' => ['N+1 自动按需启动的发电机群', '双变电站交叉馈电', '为发电机启动争取时间的超大电池集群'],
+                'svg' => '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="parallax-item" data-speed="0.1"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>'
+            ]
+        ]
+    ],
+    'en' => [
+        'title' => 'Built for Uptime and Scale',
+        'subtitle' => 'Multi-core edge routing, A+B redundant power, and leaf-spine fabrics are why we can promise true availability.',
+        'items' => [
+            [
+                'title' => 'Multi-Core Edge & Routing',
+                'text' => 'Redundant border routers operating active/active with 100G/400G uplinks. True carrier-neutral blended network.',
+                'points' => ['eBGP to Tier-1s (AT&T, Cogent, HE.net)', 'Optional DDoS mitigation via BGP diversion', 'Traffic engineering via local-pref/MED'],
+                'svg' => '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="parallax-item" data-speed="0.15"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>'
+            ],
+            [
+                'title' => 'Data Center Fabric',
+                'text' => 'Advanced Leaf-spine fabric with EVPN/VXLAN for highly scalable L2/L3 network segmentation.',
+                'points' => ['MLAG/LACP to ToR switches', 'Per-rack dual-homed server links', 'Out-of-band management network'],
+                'svg' => '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="parallax-item" data-speed="0.2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>'
+            ],
+            [
+                'title' => 'Power & Continuity',
+                'text' => 'True A+B power fed to every cabinet from independent UPS strings. Unmatched reliability.',
+                'points' => ['Generators in N+1 with automated start', 'Dual-substation cross-feed', 'Battery autonomy sized for generator ride-through'],
+                'svg' => '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="parallax-item" data-speed="0.1"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>'
+            ]
+        ]
+    ]
+];
+
+$mapData = [
+    'zh' => [
+        'title' => '全球数据中心 footprint',
+        'subtitle' => '多区域机房布局，交付最低的互联延迟体感。',
+        'locations' => [
+            ['name' => '达拉斯, TX', 'type' => 'active'],
+            ['name' => '欧文, TX', 'type' => 'pre-lease'],
+            ['name' => '威斯康星，WI', 'type' => 'active'],
+            ['name' => '洛杉矶, CA', 'type' => 'active'],
+            ['name' => '芝加哥, IL', 'type' => 'active'],
+            ['name' => '水牛城, NY', 'type' => 'active']
+        ]
+    ],
+    'en' => [
+        'title' => 'Global Data Centers',
+        'subtitle' => 'Delivering premium experiences with our diverse regional footprints.',
+        'locations' => [
+            ['name' => 'Dallas, TX', 'type' => 'active'],
+            ['name' => 'Irving, TX', 'type' => 'pre-lease'],
+            ['name' => 'Port Edwards, WI', 'type' => 'active'],
+            ['name' => 'Los Angeles, CA', 'type' => 'active'],
+            ['name' => 'Chicago, IL', 'type' => 'active'],
+            ['name' => 'Buffalo, NY', 'type' => 'active']
+        ]
+    ]
+];
 ?>
 <!DOCTYPE html>
 <html lang="<?= h($lang) ?>">
@@ -206,60 +284,29 @@ $heroProof = [
 <main id="top">
     <section class="hero">
         <div class="wrap hero-shell">
-            <div class="hero-copy">
-                <span class="badge"><?= h($copy['hero_badge']) ?></span>
-                <h1><?= h($hero['title']) ?></h1>
-                <p class="hero-text"><?= h($hero['subtitle']) ?></p>
-                <div class="hero-actions">
+            <div class="hero-copy animate-stagger">
+                <span class="badge animate-on-scroll"><?= h($copy['hero_badge']) ?></span>
+                <h1 class="animate-on-scroll"><?= h($hero['title']) ?></h1>
+                <p class="hero-text animate-on-scroll"><?= h($hero['subtitle']) ?></p>
+                <div class="hero-actions animate-on-scroll">
                     <a class="button" href="#products"><?= h($hero['cta']) ?></a>
                     <a class="button ghost" href="#contact"><?= h($copy['contact_cta']) ?></a>
                 </div>
-                <div class="hero-micro-signals">
+                <div class="hero-micro-signals animate-stagger">
                     <?php foreach (($heroMicroSignals[$lang] ?? []) as $signal): ?>
-                        <span><?= h($signal) ?></span>
-                    <?php endforeach; ?>
-                </div>
-                <div class="hero-notes">
-                    <?php foreach (($serviceHighlights[$lang] ?? []) as $highlight): ?>
-                        <article class="note-card">
-                            <h2><?= h($highlight['title']) ?></h2>
-                            <p><?= h($highlight['text']) ?></p>
-                        </article>
+                        <span class="animate-on-scroll"><?= h($signal) ?></span>
                     <?php endforeach; ?>
                 </div>
             </div>
-
-            <aside class="hero-aside">
-                <section class="hero-panel">
-                    <div class="hero-panel-head">
-                        <p class="eyebrow"><?= h($copy['products_title']) ?></p>
-                        <h2><?= h($copy['products_intro']) ?></h2>
+            
+            <div class="metric-grid animate-stagger">
+                <?php foreach ($heroMetrics as $metric): ?>
+                    <div class="metric animate-on-scroll">
+                        <strong><?= h($metric['value'] ?? '') ?></strong>
+                        <span><?= h($metric['label'][$lang] ?? '') ?></span>
                     </div>
-                    <div class="metric-grid">
-                        <?php foreach ($heroMetrics as $metric): ?>
-                            <div class="metric">
-                                <strong><?= h($metric['value'] ?? '') ?></strong>
-                                <span><?= h($metric['label'][$lang] ?? '') ?></span>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                </section>
-
-                <section class="journey-card">
-                    <p class="eyebrow"><?= h($copy['contact_cta']) ?></p>
-                    <ol>
-                        <?php foreach (($salesSteps[$lang] ?? []) as $step): ?>
-                            <li><?= h($step) ?></li>
-                        <?php endforeach; ?>
-                    </ol>
-                </section>
-
-                <section class="hero-proof-card">
-                    <p class="eyebrow"><?= h($heroProof[$lang]['label']) ?></p>
-                    <h2><?= h($heroProof[$lang]['title']) ?></h2>
-                    <p><?= h($heroProof[$lang]['text']) ?></p>
-                </section>
-            </aside>
+                <?php endforeach; ?>
+            </div>
         </div>
     </section>
 
@@ -274,24 +321,12 @@ $heroProof = [
         </div>
     </section>
 
-    <section class="trust-strip">
-        <div class="wrap trust-shell">
-            <span class="trust-label"><?= h($lang === 'zh' ? '团队常关注的交付能力' : 'Operational strengths teams care about') ?></span>
-            <div class="trust-marks">
-                <?php foreach (($trustMarks[$lang] ?? []) as $mark): ?>
-                    <span><?= h($mark) ?></span>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
 
     <section id="products" class="section">
         <div class="wrap">
             <div class="section-head animate-on-scroll">
-                <div>
-                    <p class="eyebrow"><?= h($copy['nav_products']) ?></p>
-                    <h2><?= h($copy['products_title']) ?></h2>
-                </div>
+                <p class="eyebrow"><?= h($copy['nav_products']) ?></p>
+                <h2><?= h($copy['products_title']) ?></h2>
                 <p><?= h($copy['products_intro']) ?></p>
             </div>
 
@@ -345,8 +380,23 @@ $heroProof = [
                                         <?php endforeach; ?>
                                     </ul>
                                 <?php endif; ?>
-
-                                <pre class="specs"><?= h($product['specs'][$lang] ?? '') ?></pre>
+                                <div class="specs">
+                                    <?php if (!empty($product['specs'])): ?>
+                                        <?php
+                                        $specsList = explode("\n", (string)$product['specs']);
+                                        foreach ($specsList as $specLine) {
+                                            $specLine = trim($specLine);
+                                            if (!$specLine) continue;
+                                            $parts = explode(':', $specLine, 2);
+                                            if (count($parts) === 2) {
+                                                echo '<div class="specs-item"><span>' . h(trim($parts[0])) . '</span><span>' . h(trim($parts[1])) . '</span></div>';
+                                            } else {
+                                                echo '<div class="specs-item"><span>' . h($specLine) . '</span><span></span></div>';
+                                            }
+                                        }
+                                        ?>
+                                    <?php endif; ?>
+                                </div>
                             </div>
 
                             <div class="card-footer">
@@ -378,11 +428,9 @@ $heroProof = [
     <section class="section compare-section">
         <div class="wrap">
             <div class="section-head animate-on-scroll">
-                <div>
-                    <p class="eyebrow"><?= h($lang === 'zh' ? 'Why These Plans' : 'Why These Plans') ?></p>
-                    <h2><?= h($lang === 'zh' ? '先选方向，再选配置' : 'Choose the model first, then the specs') ?></h2>
-                </div>
-                <p><?= h($lang === 'zh' ? '很多客户不是看不懂配置，而是不知道先选 VPS、托管还是整机。这里先帮他们建立判断框架。' : 'Many buyers do not struggle with specs. They struggle with choosing between VPS, colocation, and dedicated servers first.') ?></p>
+                <p class="eyebrow"><?= h($lang === 'zh' ? 'Why These Plans' : 'Why These Plans') ?></p>
+                <h2><?= h($lang === 'zh' ? '不要为多余的算力买单' : 'Don\'t pay for idle compute') ?></h2>
+                <p><?= h($lang === 'zh' ? '我们提供三种截然不同的架构体系，针对不同阶段的业务进行精确打击，彻底消除资源闲置。' : 'We provide three completely different architecture systems, targeting businesses at different stages to completely eliminate resource idle.') ?></p>
             </div>
 
             <div class="compare-grid animate-stagger">
@@ -398,12 +446,72 @@ $heroProof = [
         </div>
     </section>
 
+    <!-- Cloudnium Fabric Integration -->
+    <section class="section fabric parallax-container" id="infrastructure">
+        <div class="wrap">
+            <div class="section-head animate-on-scroll parallax-layer" data-speed="-0.03">
+                <p class="eyebrow">Infrastructure</p>
+                <h2><?= h($fabricData[$lang]['title']) ?></h2>
+                <p><?= h($fabricData[$lang]['subtitle']) ?></p>
+            </div>
+
+            <?php foreach (($fabricData[$lang]['items'] ?? []) as $index => $item): ?>
+            <div class="fabric-row parallax-layer" data-speed="-0.0<?= h(rand(3,6)) ?>">
+                <div class="fabric-content animate-on-scroll">
+                    <h3><?= h($item['title']) ?></h3>
+                    <p><?= h($item['text']) ?></p>
+                    <ul>
+                        <?php foreach($item['points'] as $pt): ?>
+                        <li><?= h($pt) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <div class="fabric-visual animate-on-scroll" style="color: var(--accent);">
+                    <?= $item['svg'] ?>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+
+    <section class="section map-section parallax-container">
+        <div class="wrap">
+            <div class="section-head animate-on-scroll" style="align-items: center; text-align: center;">
+                <p class="eyebrow">Data Centers</p>
+                <h2 style="position: static; transform: none; left: auto; max-width: 100%;"><?= h($mapData[$lang]['title']) ?></h2>
+                <p><?= h($mapData[$lang]['subtitle']) ?></p>
+            </div>
+            
+            <div class="locations animate-stagger">
+                <?php foreach (($mapData[$lang]['locations'] ?? []) as $i => $loc): ?>
+                <div class="location-tag animate-on-scroll parallax-layer" data-speed="<?= h(rand(-6, 6) / 100) ?>">
+                    <span class="dot <?= $loc['type'] === 'pre-lease' ? 'pre-lease' : '' ?>"></span> 
+                    <?= h($loc['name']) ?>
+                    <?php if ($loc['type'] === 'pre-lease'): ?>
+                    <span style="font-size:0.75rem; color:var(--muted);">(Pre-lease)</span>
+                    <?php endif; ?>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    <!-- End Cloudnium Fabric Integration -->
+
     <section id="faq" class="section faq-section">
         <div class="wrap faq-layout">
             <div class="faq-intro animate-on-scroll">
                 <p class="eyebrow"><?= h($copy['nav_faq']) ?></p>
                 <h2><?= h($copy['faq_title']) ?></h2>
                 <p><?= h($copy['faq_intro']) ?></p>
+                
+                <div class="metric-grid" style="grid-template-columns: 1fr; margin-top: 2rem;">
+                    <?php foreach (($metrics[$lang] ?? []) as $metric): ?>
+                        <div class="metric">
+                            <strong><?= h($metric['value']) ?></strong>
+                            <span><?= h($metric['label']) ?></span>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
             <div class="faq-list animate-stagger">
                 <?php foreach ($faqs as $faq): ?>
@@ -419,11 +527,9 @@ $heroProof = [
     <section class="section proof-section">
         <div class="wrap">
             <div class="section-head animate-on-scroll">
-                <div>
-                    <p class="eyebrow"><?= h($lang === 'zh' ? 'Sales Proof' : 'Sales Proof') ?></p>
-                    <h2><?= h($lang === 'zh' ? '页面不只要好看，还要更容易成交' : 'The page should not just look better. It should convert better.') ?></h2>
-                </div>
-                <p><?= h($lang === 'zh' ? '这类产品页最重要的是让客户快速理解差异、价格和下一步动作。' : 'For infrastructure offers, the page has to clarify tradeoffs, pricing, and the next action fast.') ?></p>
+                <p class="eyebrow"><?= h($lang === 'zh' ? 'Trust' : 'Trust') ?></p>
+                <h2><?= h($lang === 'zh' ? '硬核的基础设施保证' : 'Hardcore Infrastructure Guarantee') ?></h2>
+                <p><?= h($lang === 'zh' ? '这不是营销话语，这是我们对运行时间的严肃承诺。数百家企业级客户将核心业务交托于我们。' : 'This is not marketing talk, this is our serious commitment to uptime. Hundreds of enterprise clients entrust their core business to us.') ?></p>
             </div>
 
             <div class="proof-grid animate-stagger">
@@ -437,53 +543,18 @@ $heroProof = [
         </div>
     </section>
 
-    <section id="contact" class="section contact">
-        <div class="wrap contact-layout">
-            <div class="contact-copy animate-on-scroll">
-                <p class="eyebrow"><?= h($copy['nav_contact']) ?></p>
-                <h2><?= h($contact['title']) ?></h2>
-                <p><?= h($contact['intro']) ?></p>
-                <a class="button" href="mailto:<?= h($contact['email_value']) ?>"><?= h($copy['contact_cta']) ?></a>
-            </div>
-
-            <div class="contact-grid animate-stagger">
-                <article class="contact-card animate-on-scroll">
-                    <span>📧 <?= h($contact['email_label']) ?></span>
-                    <strong><a href="mailto:<?= h($contact['email_value']) ?>"><?= h($contact['email_value']) ?></a></strong>
-                </article>
-                <article class="contact-card animate-on-scroll">
-                    <span>📞 <?= h($contact['phone_label']) ?></span>
-                    <strong><a href="tel:<?= h(preg_replace('/\s+/', '', $contact['phone_value'])) ?>"><?= h($contact['phone_value']) ?></a></strong>
-                </article>
-                <?php if (!empty($contact['telegram_value'])): ?>
-                    <article class="contact-card animate-on-scroll">
-                        <span>✈️ <?= h($contact['telegram_label']) ?></span>
-                        <strong><a href="<?= h($contact['telegram_value']) ?>" target="_blank" rel="noopener noreferrer"><?= h($contact['telegram_value']) ?></a></strong>
-                    </article>
-                <?php endif; ?>
-                <?php if (!empty($contact['whatsapp_value'])): ?>
-                    <article class="contact-card animate-on-scroll">
-                        <span>💬 <?= h($contact['whatsapp_label']) ?></span>
-                        <strong><a href="<?= h($contact['whatsapp_value']) ?>" target="_blank" rel="noopener noreferrer"><?= h($contact['whatsapp_value']) ?></a></strong>
-                    </article>
-                <?php endif; ?>
-                <article class="contact-card contact-card-wide animate-on-scroll">
-                    <span>📍 <?= h($contact['address_label']) ?></span>
-                    <strong><?= h($contact['address_value']) ?></strong>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="section final-cta-section">
+    <section id="contact" class="section final-cta-section">
         <div class="wrap">
             <div class="final-cta-card animate-on-scroll">
-                <div>
-                    <p class="eyebrow"><?= h($copy['contact_cta']) ?></p>
-                    <h2><?= h($finalCta[$lang]['title']) ?></h2>
-                    <p><?= h($finalCta[$lang]['text']) ?></p>
+                <p class="eyebrow"><?= h($copy['contact_cta']) ?></p>
+                <h2><?= h($finalCta[$lang]['title']) ?></h2>
+                <p><?= h($finalCta[$lang]['text']) ?></p>
+                <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a class="button" href="mailto:<?= h($contact['email_value']) ?>"><?= h($finalCta[$lang]['button']) ?></a>
+                    <?php if (!empty($contact['telegram_value'])): ?>
+                        <a class="button ghost" href="<?= h($contact['telegram_value']) ?>" target="_blank" rel="noopener noreferrer">Telegram</a>
+                    <?php endif; ?>
                 </div>
-                <a class="button" href="mailto:<?= h($contact['email_value']) ?>"><?= h($finalCta[$lang]['button']) ?></a>
             </div>
         </div>
     </section>
@@ -612,6 +683,43 @@ $heroProof = [
             }
         });
     });
+
+    // ── 7. Parallax Scrolling Effect ──
+    var parallaxContainers = document.querySelectorAll('.parallax-container, .hero');
+    var parallaxLayers = document.querySelectorAll('.parallax-layer, .parallax-item');
+    
+    var lastScrollY = window.scrollY;
+    var ticking = false;
+
+    function doParallax() {
+        var scrollY = window.scrollY;
+        
+        parallaxLayers.forEach(function(layer) {
+            // Check if element is reasonably near to viewport
+            var rect = layer.getBoundingClientRect();
+            if (rect.top < window.innerHeight + 200 && rect.bottom > -200) {
+                var speed = parseFloat(layer.getAttribute('data-speed') || '0.1');
+                // Calculate offset from the middle of the screen
+                // Use absolute page coordinates or viewport to ensure smooth direction
+                var yPos = -(scrollY * speed);
+                layer.style.transform = 'translateY(' + yPos + 'px)';
+            }
+        });
+        
+        ticking = false;
+    }
+
+    if (window.innerWidth > 768) { // Only enable on desktop
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    doParallax();
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+        doParallax(); // initial kick
+    }
 })();
 </script>
 </body>
