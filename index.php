@@ -456,7 +456,7 @@ $mapData = [
             </div>
 
             <?php foreach (($fabricData[$lang]['items'] ?? []) as $index => $item): ?>
-            <div class="fabric-row parallax-layer" data-speed="-0.0<?= h(rand(3,6)) ?>">
+            <div class="fabric-row parallax-layer" data-speed="-0.0<?= rand(3,6) ?>">
                 <div class="fabric-content animate-on-scroll">
                     <h3><?= h($item['title']) ?></h3>
                     <p><?= h($item['text']) ?></p>
@@ -484,7 +484,7 @@ $mapData = [
             
             <div class="locations animate-stagger">
                 <?php foreach (($mapData[$lang]['locations'] ?? []) as $i => $loc): ?>
-                <div class="location-tag animate-on-scroll parallax-layer" data-speed="<?= h(rand(-6, 6) / 100) ?>">
+                <div class="location-tag animate-on-scroll parallax-layer" data-speed="<?= rand(-6, 6) / 100 ?>">
                     <span class="dot <?= $loc['type'] === 'pre-lease' ? 'pre-lease' : '' ?>"></span> 
                     <?= h($loc['name']) ?>
                     <?php if ($loc['type'] === 'pre-lease'): ?>
