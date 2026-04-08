@@ -1,4 +1,5 @@
 .DS_Store
 .boss/
 /storage/site-data.json
+/storage/admin-password.hash
 /storage/.seeded

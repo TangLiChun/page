@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = input('username');
     $password = input('password');
 
-    if ($username === config('admin.username') && $password === config('admin.password')) {
+    if ($username === config('admin.username') && password_verify($password, admin_password_hash())) {
         $_SESSION['is_admin'] = true;
         flash('success', '登录成功。');
         redirect('admin/dashboard.php');
@@ -34,28 +34,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="<?= h(asset('public/admin.css')) ?>">
 </head>
 <body class="admin-login-page">
-    <main class="login-card">
-        <h1>管理后台登录</h1>
-        <p>默认账号信息在 <code>includes/config.php</code> 中，请上线前修改。</p>
+    <main class="login-wrap">
+        <section class="login-card">
+            <span class="admin-kicker">Admin Access</span>
+            <h1>管理后台登录</h1>
+            <p>登录后可以维护商品、FAQ、联系方式以及首页展示内容。默认账号信息在 <code>includes/config.php</code> 中，请上线前修改。</p>
 
-        <?php if ($error): ?>
-            <div class="flash error"><?= h($error) ?></div>
-        <?php endif; ?>
+            <?php if ($error): ?>
+                <div class="flash error"><?= h($error) ?></div>
+            <?php endif; ?>
 
-        <form method="post" class="stack">
-            <input type="hidden" name="_token" value="<?= h(csrf_token()) ?>">
-            <label>
-                <span>用户名</span>
-                <input type="text" name="username" required>
-            </label>
-            <label>
-                <span>密码</span>
-                <input type="password" name="password" required>
-            </label>
-            <button type="submit">登录</button>
-        </form>
+            <form method="post" class="stack">
+                <input type="hidden" name="_token" value="<?= h(csrf_token()) ?>">
+                <label>
+                    <span>用户名</span>
+                    <input type="text" name="username" required>
+                </label>
+                <label>
+                    <span>密码</span>
+                    <input type="password" name="password" required>
+                </label>
+                <button type="submit">登录</button>
+            </form>
 
-        <a class="back-link" href="<?= h(url('index.php')) ?>">返回前台</a>
+            <a class="back-link" href="<?= h(url('index.php')) ?>">返回前台</a>
+        </section>
     </main>
 </body>
 </html>
